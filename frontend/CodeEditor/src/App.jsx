@@ -7,8 +7,8 @@ import {Routes, Route, Navigate } from 'react-router-dom'
 import Login from './components/Login'
 import NewProject from './components/NewProject'
 import DsaWorkspace from './components/DSA/DsaWorkSpace'
-import DevWorkspace from './components/Dev/DevWorkSpace'
-import AssignmentWorkspace from './components/Assignments/AssignmentWorkSpace'
+import DevWorkspace from './components/Dev/DevWorkspace'
+import AssignmentWorkspace from './components/Assignments/AssignmentWorkspace'
 import Signup from './components/Signup'
 import UserProfile from "./components/Utils/user/UserProfile"
 import LogoutButton from "./components/LogoutButton"
