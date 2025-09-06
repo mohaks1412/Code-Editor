@@ -2,8 +2,6 @@ import React from 'react';
 import './Home.css';
 import client1 from '../assets/client1.png';
 import client2 from '../assets/client2.png';
-import testCases from "../assets/testCases.png";
-import dsaIde from "../assets/dsaIde.png";
 import Projects from "../assets/projects.png";
 import MyProjects from "../assets/MyProjects.png";
 import audio from "../assets/audio.png";
