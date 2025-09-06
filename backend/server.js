@@ -35,10 +35,15 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
+// Get the correct origin from environment variables or use localhost for development
+const frontendOrigin = process.env.NODE_ENV === 'production' 
+  ? process.env.FRONTEND_URL 
+  : "http://localhost:5173";
+
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // frontend
+    origin: frontendOrigin, // Use the dynamic origin
     credentials: true,
   })
 );
@@ -57,7 +62,7 @@ app.use("/api/execute", runRoutes);
 // ----------------------- Socket.io Setup -----------------------
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: frontendOrigin, // Use the dynamic origin
     methods: ["GET", "POST"],
     credentials: true,
   },
