@@ -43,7 +43,12 @@ const NotePad = ({ tabId }) => {
 
   };
 
+  //-------------------------------------------------------------Socket integration--------------------------------------------
+
   const tab = tabId === 1 ? "question" : "notes";
+
+  
+    const NotepadTimeoutRef = useRef(null);
 
   const handleRemoteNotepadChanges = ({_projectId, _fileId, newText, _tab})=>{
     if(projectId != _projectId || !newText){
@@ -69,7 +74,14 @@ const NotePad = ({ tabId }) => {
   
     useEffect(()=>{
       
-      socketService.emitNotepadChanges(text, tab);
+      if(NotepadTimeoutRef.current){
+        clearTimeout(NotepadTimeoutRef.current);
+      }
+
+      NotepadTimeoutRef.current = setTimeout(() => {
+        socketService.emitNotepadChanges(text, tab);
+      }, 300);
+      
     }, [text])
 
   return (

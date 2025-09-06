@@ -1,80 +1,68 @@
 /* App.css */
 .app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* Vertically center the whole container */
-  align-items: center;      /* Horizontally center */
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  text-align: center;       /* Center text inside elements */
-  gap: 1rem;                /* Optional: space between elements */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    gap: 1rem;
 }
 
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--dark-grey);
+    color: #ffffff;
+}
 
-:root {
-            --dark-grey: #262626;
-            --orange: #ff8c00;
-        }
+.loading-screen {
+    padding: 2.5rem;
+    background-color: var(--dark-grey);
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
 
-        body {
-            background-color: var(--dark-grey);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #ffffff;
-        }
+.dots-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
 
-        .loading-screen {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2.5rem;
-            background-color: var(--dark-grey);
-            border-radius: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
 
-        .dots-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 30px;
-        }
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
 
-        .dot {
-            width: 12px;
-            height: 12px;
-            margin: 0 8px;
-            background-color: var(--orange);
-            border-radius: 50%;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
 
-        .dot:nth-child(1) {
-            animation-delay: -0.32s;
-        }
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
 
-        .dot:nth-child(2) {
-            animation-delay: -0.16s;
-        }
-
-        @keyframes bounce {
-            0%, 80%, 100% {
-                transform: scale(0);
-            }
-            40% {
-                transform: scale(1);
-            }
-        }
-
-        .loading-text {
-            color: #f0f0f0;
-            font-size: 1.25rem;
-            margin-top: 1.5rem;
-            font-weight: 600;
-        }
+.loading-text {
+    color: #f0f0f0;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
