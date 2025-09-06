@@ -44,13 +44,13 @@ function App() {
     console.log(loading);
     
 
-  return loading?(<div class="loading-screen">
-        <div class="dots-container">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+  return loading?(<div className="loading-screen">
+        <div className="dots-container">
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
         </div>
-        <p class="loading-text">Loading...</p>
+        <p className="loading-text">Loading...</p>
     </div>)
      : 
      (

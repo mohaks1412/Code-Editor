@@ -105,7 +105,7 @@ const loginUser = async (req, res) => {
         res.cookie('authToken', token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // only send cookie over HTTPS in production
-            sameSite: 'Strict', // helps protect from CSRF
+            sameSite: 'None', // helps protect from CSRF
             maxAge: 24 * 60 * 60 * 1000 // 1 day expiration
         });
 
@@ -131,7 +131,7 @@ const logoutUser = (req, res) => {
   res.cookie('authToken', '', {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'Strict',
+    sameSite: 'None',
     maxAge: 0,
   });
 
