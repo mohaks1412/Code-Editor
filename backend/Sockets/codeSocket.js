@@ -10,6 +10,6 @@ export default function codeSocket(io, socket) {
     
     
     // Send to *everyone* in the room (including sender)
-    io.to(projectId).emit("codeChange", { _projectId: projectId, _fileId: fileId, newCode : code });
+    socket.to(projectId).emit("codeChange", { _projectId: projectId, _fileId: fileId, newCode : code });
   });
 }
