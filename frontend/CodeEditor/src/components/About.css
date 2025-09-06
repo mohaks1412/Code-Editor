@@ -1,0 +1,136 @@
+/* Scoped styles for the About page container */
+.about-container {
+  --base-grey: #1c1c1c;
+  --text-color: #f0f0f0;
+  --accent-orange: rgba(255, 111, 0, 1);
+  --soft-orange-glow: rgba(255, 111, 0, 0.2);
+
+  background-color: var(--base-grey);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at center, var(--soft-orange-glow) 0%, transparent 40%);
+  border-radius: 8px;
+  overflow-x: hidden;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.about-hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--text-color);
+}
+
+.about-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--accent-orange);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
+/* Story sections */
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 5rem 1rem;
+}
+
+.story-section h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.story-section p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.story-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.story-section li {
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.story-image, .team-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-photo {
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--soft-orange-glow);
+  transition: transform 0.3s ease;
+}
+
+.team-member {
+  max-width: 200px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-orange);
+  box-shadow: 0 0 15px var(--soft-orange-glow);
+  transition: transform 0.3s ease;
+}
+
+/* Wonky rotations */
+.rotate-left {
+  transform: rotate(-3deg);
+}
+
+.rotate-right {
+  transform: rotate(2deg);
+}
+
+.rotate-left:hover, .rotate-right:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 768px) {
+  .story-section {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+  
+  .story-section h2 {
+    text-align: left;
+  }
+  
+  .story-section.reverse-layout {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl; 
+  }
+
+  .story-section.reverse-layout .story-text {
+    direction: ltr;
+  }
+
+  .makers-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .team-photos {
+    gap: 3rem;
+  }
+}

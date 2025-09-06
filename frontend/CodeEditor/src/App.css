@@ -1,0 +1,12 @@
+/* App.css */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Vertically center the whole container */
+  align-items: center;      /* Horizontally center */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;       /* Center text inside elements */
+  gap: 1rem;                /* Optional: space between elements */
+}

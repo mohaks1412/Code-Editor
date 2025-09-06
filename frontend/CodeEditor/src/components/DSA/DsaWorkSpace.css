@@ -1,0 +1,32 @@
+.dsa-workspace-container {
+  height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  border-bottom: 3px solid #3b3b3b;
+  background-color: #1e1e1e;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  background-color: #1e1e1e;
+  color: #ffa500;
+  height: 100vh;
+}
+
+.sidebar-container {
+  
+  width: 250px;
+  border-right: 3px solid #3b3b3b;
+}
+
+.workspaces-container {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}

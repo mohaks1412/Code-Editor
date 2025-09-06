@@ -1,0 +1,39 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem; /* Space between label and input */
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+.input-container label {
+  font-weight: 600;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.input-container input,
+.input-container textarea {
+  background-color: var(--base-grey);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  resize: vertical;
+  min-height: 2.5rem;
+}
+
+.input-container input:hover,
+.input-container textarea:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 6px var(--accent-color);
+}

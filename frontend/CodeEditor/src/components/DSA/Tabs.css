@@ -1,0 +1,29 @@
+.tabs-container {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  background-color: #2e2e2e; /* dark grey base */
+  border-radius: 6px;
+}
+
+.tabs-container button {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabs-container button:hover {
+  background-color: #3d3d3d;
+  color: #ff7f50; /* softer orange */
+}
+
+.tabs-container button.active {
+  background: linear-gradient(45deg, #ff6f00, #ff9900);
+  color: white;
+  box-shadow: 0 0 10px #ff9900aa;
+}

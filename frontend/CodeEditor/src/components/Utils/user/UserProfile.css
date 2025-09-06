@@ -1,0 +1,101 @@
+/* Container for the entire user profile page */
+.user-profile-container {
+    --base-grey: #1c1c1c;
+    --text-color: #f0f0f0;
+    --accent-orange: rgba(255, 111, 0, 1);
+    --soft-orange-glow: rgba(255, 111, 0, 0.2);
+
+    /* Encapsulate styles and apply the theme */
+    background-color: var(--base-grey);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 5rem auto; /* Center the form vertically and horizontally */
+    box-shadow: 0 0 25px var(--soft-orange-glow); /* Subtle glow effect */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background gradient to add depth */
+.user-profile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, var(--soft-orange-glow) 0%, transparent 60%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Ensure content is above the background gradient */
+.user-profile-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Heading styling */
+.user-profile-container h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    color: var(--accent-orange);
+}
+
+/* Profile picture styles */
+.profile-pic-wrapper {
+    display: inline-block;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid var(--accent-orange);
+    box-shadow: 0 0 10px var(--soft-orange-glow);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+.profile-pic-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-orange);
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #2c2c2c;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Form layout for profile fields */
+.user-profile-container .input-container {
+    margin-bottom: 1.5rem;
+}
+
+/* Styling for read-only inputs */
+.user-profile-container .input-container input:read-only,
+.user-profile-container .input-container textarea:read-only {
+    border: 1px solid #444;
+    background-color: #2b2b2b;
+    cursor: default;
+    opacity: 0.8;
+}

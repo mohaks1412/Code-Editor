@@ -1,0 +1,33 @@
+.joinproject-container {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--base-grey);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 111, 0, 0.3);
+  color: var(--text-color);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.joinproject-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 28px rgba(255, 111, 0, 0.6);
+}
+
+.joinproject-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.joinproject-input {
+  margin: 1.5rem auto;
+  max-width: 350px;
+}
+
+.joinproject-button {
+  margin-top: 1.5rem;
+}

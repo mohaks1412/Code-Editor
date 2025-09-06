@@ -1,0 +1,9 @@
+.draggable-wrapper {
+  cursor: grab;
+  user-select: none;
+  transition: cursor 0.2s ease;
+}
+
+.draggable-wrapper:active {
+  cursor: grabbing;
+}

@@ -1,0 +1,66 @@
+/* DevWorkspace container: full viewport height, vertical layout */
+.devworkspace-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #1e1e1e; /* dark base */
+  color: #f0f0f0;
+}
+
+/* Top bar with RunBtn */
+.devworkspace-topbar {
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+  background: #252526;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main workspace: sidebar + editors + output pane */
+.devworkspace-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar container (just size + border, styling comes from Sidebar.css) */
+.devworkspace-sidebar {
+  width: 280px;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* delegate scrolling to .sidebar-list */
+}
+/* IDE editor takes flexible space */
+.devworkspace-ide {
+  flex: 1;
+  background-color: #1e1e1e;
+  padding: 10px;
+  overflow: auto;
+}
+
+/* Output pane: equal width to IDE */
+.devworkspace-outputpane {
+  flex: 1; /* instead of fixed width */
+  border-left: 1px solid #333;
+  background-color: #252526;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Scrollbars for output pane only (sidebar uses Sidebar.css) */
+.devworkspace-outputpane::-webkit-scrollbar {
+  width: 8px;
+}
+
+.devworkspace-outputpane::-webkit-scrollbar-thumb {
+  background-color: #fb923c;
+  border-radius: 4px;
+}
+
+/* Firefox scrollbar for output pane */
+.devworkspace-outputpane {
+  scrollbar-width: thin;
+  scrollbar-color: #fb923c #252526;
+}

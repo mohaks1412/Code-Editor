@@ -1,0 +1,96 @@
+:root {
+  --base-grey: #252525;
+  --text-color: #f5f5f5;
+  --accent-color: #ff6f00;
+  --link-hover: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(34, 40, 49, 0.4);
+}
+
+.navbar-container {
+  /* Glassmorphism effect */
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Modern styling */
+  padding: 1rem 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Deeper, more refined shadows */
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1), 
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-container nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Increased spacing for an airier feel */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-container nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px; /* Softer rounded corners */
+  transition: 
+    background-color 0.3s ease, 
+    transform 0.2s ease,
+    color 0.3s ease;
+  position: relative; /* For the underline effect */
+}
+
+.navbar-container nav ul li a:hover {
+  background-color: var(--link-hover);
+  transform: translateY(-2px);
+}
+
+/* Subtle underline effect on hover */
+.navbar-container nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-container nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-container nav ul li a.active {
+  color: var(--accent-color);
+  font-weight: 700;
+  background-color: rgba(255, 111, 0, 0.15); /* More subtle background */
+}
+
+/* Make the active state's underline stand out */
+.navbar-container nav li a.active::after {
+  width: 100%;
+  left: 0;
+  background-color: var(--accent-color);
+}
+
+.nav-right {
+  gap: 1.5rem;
+}

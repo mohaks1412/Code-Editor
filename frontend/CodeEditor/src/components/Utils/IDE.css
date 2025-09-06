@@ -1,0 +1,28 @@
+/* IDE.css */
+.ide-container {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+}
+.monaco-ide {
+  height: 100%;
+}
+
+/* Monaco widgets above everything */
+.monaco-editor .suggest-widget,
+.monaco-editor .hover-widget,
+.monaco-editor .parameter-hints-widget {
+  z-index: 9999 !important;
+}
+
+/* Ghost text (applies to widget content) */
+.inline-suggestion-ghost-text {
+  opacity: 0.5;
+  font-style: JetBrains Mono;
+  color: gray;
+  line-height: 1;
+  transform: translateY(1px); /* tiny nudge to align baseline nicely */
+  white-space: pre;
+  pointer-events: none;
+}

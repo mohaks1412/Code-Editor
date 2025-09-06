@@ -1,0 +1,186 @@
+/* Style Encapsulation: All styles are now scoped to .home-container */
+.home-container {
+  /* Scoped custom properties */
+  --base-grey: #1c1c1c;
+  --text-color: #f0f0f0;
+  --accent-orange: rgba(255, 111, 0, 1);
+  --soft-orange-glow: rgba(255, 111, 0, 0.2);
+
+  background-color: var(--base-grey);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at center, var(--soft-orange-glow) 0%, transparent 40%);
+  border-radius: 8px;
+  overflow-x: hidden; /* This is the key change to prevent horizontal scroll */
+}
+
+/* Base styles are now contained within the parent class */
+.home-container h1, .home-container h2, .home-container p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero section */
+.hero-section {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.hero-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.word2 {
+  color: var(--accent-orange);
+}
+
+.hero-subtitle {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--accent-orange);
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Feature Sections - Now using CSS Grid for better control */
+.feature-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 5rem 1rem;
+}
+
+.feature-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Image styling */
+.feature-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.feature-images img {
+  width: 100%;
+  max-width: 400px; /* Adjusted to a slightly smaller size */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--soft-orange-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adjusted "Wonky" effect to prevent overlap */
+.client-image, .projects-image {
+  max-width: 350px; /* Adjusted for a better fit */
+}
+
+.img-left {
+  transform: rotate(-3deg);
+}
+
+.img-right {
+  transform: rotate(2deg);
+}
+
+.img-left:hover {
+  transform: rotate(-5deg) scale(1.03);
+}
+
+.img-right:hover {
+  transform: rotate(4deg) scale(1.03);
+}
+
+.audio-image {
+  max-width: 600px; /* Adjusted for a better fit */
+  transform: rotate(1deg);
+}
+
+.audio-image:hover {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+  .feature-section {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+  
+  .reverse-layout {
+    grid-template-areas: "images text";
+  }
+
+  .reverse-layout .feature-text {
+    grid-area: text;
+  }
+  
+  .reverse-layout .feature-images {
+    grid-area: images;
+  }
+
+  .feature-title {
+    text-align: left;
+  }
+}
+
+/* AI Feature Section */
+.ai-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 5rem 1rem;
+}
+
+.ai-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--soft-orange-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: rotate(1deg); /* Wonky rotation */
+}
+
+.ai-image:hover {
+    transform: rotate(-1deg) scale(1.02);
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+    .ai-feature {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+    
+    /* Make this feature's layout reverse by default to alternate with the previous section */
+    .ai-feature {
+      grid-template-areas: "images text";
+    }
+
+    .ai-feature .feature-text {
+      grid-area: text;
+    }
+
+    .ai-feature .feature-images {
+      grid-area: images;
+    }
+}

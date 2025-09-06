@@ -1,0 +1,33 @@
+.audio-container {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: var(--base-grey);
+  max-width: 320px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.record-btn {
+  background: linear-gradient(45deg, #ff6f00, #ff8f00);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 3px 8px rgba(255, 111, 0, 0.6);
+  user-select: none;
+}
+
+.record-btn:hover {
+  background: linear-gradient(45deg, #ff8f00, #ffaa00);
+  box-shadow: 0 4px 12px rgba(255, 143, 0, 0.8);
+}
+
+.record-btn.recording {
+  background: linear-gradient(45deg, #e65c00, #ff7f00);
+  box-shadow: 0 2px 6px rgba(230, 92, 0, 0.9);
+  transform: scale(1.05);
+}

@@ -1,0 +1,45 @@
+.runbtn {
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically (optional) */
+  gap: 12px;                 /* space between buttons */
+  padding: 10px 0;
+  background: #2d2d2d; /* subtle gray gradient */
+  color: #ff6f00; /* orange text */
+  border: 2px solid #ff6f00; /* orange border */
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  /* box-shadow: 0 3px 10px rgba(255, 111, 0, 0.6); */
+  transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  display: inline-block;
+}
+
+.runbtn:hover {
+  background: #2d2d2d; /* lighter gray on hover */
+  color: #ff8f00; /* slightly brighter orange text */
+  border-color: #ff8f00; /* slightly brighter orange border */
+  box-shadow: 0 4px 14px rgba(255, 143, 0, 0.15); /* subtle orange glow */
+  transform: scale(1.05);
+}
+
+.runbtn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(255, 111, 0, 0.25);
+  background: linear-gradient(45deg, #bdbdbd, #e0e0e0); /* slightly swap the grays for feedback */
+}
+
+.runbtn:disabled {
+  background: #555555;       /* darker gray background */
+  color: #bbbbbb;            /* muted text color */
+  border-color: #bbbbbb;     /* muted border color */
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
+}
