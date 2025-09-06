@@ -244,6 +244,8 @@ const IDE = () => {
 
   //----------------------------------------------codeSync---------------------------------------------------------
 
+  const codeTimeoutRef = useRef(null);
+
   const handleRemoteChanges = ({_projectId, _fileId, newCode})=>{
     
     if(projectId != _projectId || !newCode){
@@ -270,12 +272,23 @@ const IDE = () => {
   }, [fileId])
 
   useEffect(()=>{
+    if(codeTimeoutRef.current){
+      clearTimeout(codeTimeoutRef.current);
+    }
 
-    socketService.emitCodeChanges(code);
+    codeTimeoutRef.current = setTimeout(()=>{
+      if(code){
+        socketService.emitCodeChanges(code);
+      }
+    }, 300)
+    
   }, [code])
 
 
   //-------------------------------------------------------Cursor Handeling---------------------------------------------------
+
+   
+  const cursorTimeoutRef = useRef(null);
 const colors = [
   "#e57373", "#64b5f6", "#81c784", "#b16d06ff", "#ba68c8",
   "#4db6ac", "#079d75ff", "#7986cb", "#a1887f", "#90a4ae"
@@ -387,14 +400,20 @@ const handleCursorChange = ({ _fileId, _position, _username }) => {
   }, []);
 
   useEffect(()=>{
-
+    if(cursorTimeoutRef.current){
+      clearTimeout(cursorTimeoutRef.current);
+    }
     const editor = editorRef.current;
 
     if(!editor){
       return;
     }
+
+    cursorTimeoutRef.current = setTimeout(()=>{
     
     socketService.emitCursorChange(cursorPosition, username, fileId)
+
+    }, 50)
     
   }, [cursorPosition, projectId, fileId]);
 
