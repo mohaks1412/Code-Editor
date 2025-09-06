@@ -41,8 +41,19 @@ function App() {
     fetchUser();
   }, [dispatch]);
 
+    console.log(loading);
+    
 
-  return loading?(<h1>Loading...</h1>) : (
+  return loading?(<div class="loading-screen">
+        <div class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <p class="loading-text">Loading...</p>
+    </div>)
+     : 
+     (
     <div className="app-container">
       <Navbar />
       <Routes>
